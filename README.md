@@ -9,6 +9,7 @@
 </br>
 <h2 id="depID">Dependencies</h2>
 <ul>
-	<li><a href="https://github.com/craftworkgames/MonoGame.Extended">Monogame Extended</a></li>
-	<li> </li>
+	<li><a href="http://www.monogame.net/">Monogame</a></li>
+	<li><a href="https://github.com/craftworkgames/MonoGame.Extended">Monogame.Extended</a></li>
+	<li> <a href"https://github.com/tainicom/Aether.Physics2D">Aether.Physics2D</a></li>
 </ul>
