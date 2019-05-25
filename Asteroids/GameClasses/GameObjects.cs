@@ -10,18 +10,18 @@ namespace Asteroids
     class GameObjects
     {
         // Atributos
-        private List<Entity> objectsList;
+        private List<Entity> objectsList; // Lista de entidades
 
         // Métodos básicos
         public GameObjects()
         {
             objectsList = new List<Entity>();
         }
-        
+
         public void init()
         {
             // Loop para inicializar objetos de objectsList
-            for (int i = 0; i < objectsList.Count();i++)
+            for (int i = 0; i < objectsList.Count(); i++)
             {
                 objectsList[i].init(); // Chamada à init() nos objetos listados
             }
@@ -49,7 +49,7 @@ namespace Asteroids
                 objectsList[i].unload(); // Chamada à unload() nos objetos listados
             }
         }
-    
+
         public void update(GameTime gT)
         {
             // Loop para atualiza objetos de objectsList
@@ -70,28 +70,35 @@ namespace Asteroids
 
         public void createPlayer(float x, float y)
         {
-            objectsList.Add(new Spaceship(x,y, this));
+            objectsList.Add(new Spaceship(x, y, this));
         }
 
         public void createPlayersOnDrugs(int n)
-        {
-            Random rand;
-            
-            for (int i = 0; i < n; i++)
-            {
-                    rand = new Random(i.GetHashCode());
-                    objectsList.Add(new Spaceship(rand.Next(GameData.WIDTH), rand.Next(GameData.HEIGHT), this));
-            }
-        }
-
-        public void createAsteroids(int n)
         {
             Random rand;
 
             for (int i = 0; i < n; i++)
             {
                 rand = new Random(i.GetHashCode());
-                objectsList.Add(new Asteroid(rand.Next(GameData.WIDTH), rand.Next(GameData.HEIGHT),AsteroidTypes.Small));
+                objectsList.Add(new Spaceship(rand.Next(GameData.WIDTH),
+                    rand.Next(GameData.HEIGHT),
+                    this,
+                    new Color(rand.Next(256), rand.Next(256), rand.Next(256))));
+            }
+        }
+
+        public void createAsteroids(int n)
+        {
+            Random rand;
+            int j;
+
+            for (int i = 0; i < n; i++)
+            {
+                rand = new Random(i.GetHashCode());
+                j = rand.Next(0, 3);
+                objectsList.Add(new Asteroid(rand.Next(GameData.WIDTH),
+                    rand.Next(GameData.HEIGHT),
+                    (AsteroidTypes)j));
             }
         }
 

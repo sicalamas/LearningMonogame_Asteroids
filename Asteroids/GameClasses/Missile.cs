@@ -46,15 +46,15 @@ namespace Asteroids
         /// <param name="sB">Referência a SpriteBatch (Classe "desenhadora" da framework)</param>
         public override void draw(SpriteBatch sB)
         {
-                sB.Draw(GameData.gameTexture,
-            position,
-            new Rectangle(16,48,16,16),
-            Color.White,
-            angle + MathHelper.ToRadians(90),
-            new Vector2(8, 8),
-            scale,
-            SpriteEffects.None,
-            0);
+            sB.Draw(GameData.gameTexture,
+        position,
+        new Rectangle(16, 48, 16, 16),
+        Color.White,
+        angle + MathHelper.ToRadians(90),
+        new Vector2(8, 8),
+        scale,
+        SpriteEffects.None,
+        0);
             base.draw(sB);
         }
 
@@ -65,7 +65,7 @@ namespace Asteroids
         {
             position.X += velocity.X * 10.0f;
             position.Y += velocity.Y * 10.0f;
-            // Screen Warp
+            // Screen Destroy (apaga os mísseis que saem da tela)
             if (position.X >= GameData.WIDTH || position.X <= 0 || position.Y >= GameData.HEIGHT || position.Y <= 0)
             {
                 destroy();

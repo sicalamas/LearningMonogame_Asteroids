@@ -14,17 +14,24 @@ namespace Asteroids
         bool isAccelerating; // Teste: Está acelerando?
         float accelIndex; // Índice de aceleração
         float dragIndex; // Índice de desaceleração
-        Color color;
+        Color myColor; //TODO: implementar cor
 
         GameObjects entityRef;
 
         private double secondsPassed = 0.0;
         private bool _allowFire = true;
 
-        public Spaceship(float x,float y, GameObjects e)
+        public Spaceship(float x, float y, GameObjects e)
         {
             position = new Vector2(x, y);
             entityRef = e;
+            myColor = new Color(1.0f, 1.0f, 1.0f); // Color = branca
+        }
+        public Spaceship(float x, float y, GameObjects e, Color c)
+        {
+            position = new Vector2(x, y);
+            entityRef = e;
+            myColor = c; // Recebo cor como parâmetro
         }
 
 
@@ -81,18 +88,19 @@ namespace Asteroids
                 sB.Draw(GameData.gameTexture,
                 position,
                 new Rectangle(0, 0, 16, 16),
-                Color.White,
+                myColor,
                 angle + MathHelper.ToRadians(90),
                 new Vector2(8, 8),
                 scale,
                 SpriteEffects.None,
                 0);
-            } else
+            }
+            else
             {
                 sB.Draw(GameData.gameTexture,
                 position,
                 new Rectangle(0, 16, 16, 16),
-                Color.White,
+                myColor,
                 angle + MathHelper.ToRadians(90),
                 new Vector2(8, 8),
                 scale,
@@ -129,7 +137,7 @@ namespace Asteroids
             {
                 angle += 0.033f;
             }
-  
+
         }
 
         // accelerate() -> Acelera a nave (Bidimensional projectile motion)
@@ -174,6 +182,5 @@ namespace Asteroids
             entityRef.createMissile(this);
             _allowFire = false;
         }
-
     }
 }

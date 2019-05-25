@@ -27,8 +27,8 @@ namespace Asteroids
 
             // Configurações para os objetos do jogo
             gameObjects = new GameObjects(); // Instancia o listão de objetos
-            gameObjects.createPlayersOnDrugs(1); // Instancia N players
-            gameObjects.createAsteroids(10); // Instancia N asteróides
+            gameObjects.createPlayer(GameData.WIDTH/2,GameData.HEIGHT/2); // Instancia N players
+            gameObjects.createAsteroids(30); // Instancia N asteróides (20 nesse caso)
 
             // Configurações da tela do jogos
             graphics.PreferredBackBufferWidth = GameData.WIDTH;
@@ -80,7 +80,7 @@ namespace Asteroids
             {
                 Exit();
             }
-                
+
             gameObjects.update(gameTime);
             base.Update(gameTime);
         }

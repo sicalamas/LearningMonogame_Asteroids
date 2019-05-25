@@ -20,7 +20,7 @@ namespace Asteroids
         public static readonly int HEIGHT = 480; // Altura da tela
         public static int LIFES = 3; // Nº de vidas do player
         public static float SCALE = 2.0f; // Escala global dos desenhos no jogo
-        public static bool FULLSCREEN = false; // Define se tela cheia ou não
+        public static bool FULLSCREEN = true; // Define se tela cheia ou não
 
         /// <summary>
         /// Carrega o sprite sheet na memória (referência única na classe principal)
@@ -37,7 +37,7 @@ namespace Asteroids
         /// <param name="sB">Referência a SpriteBatch</param>
         public void drawLifes(SpriteBatch sB)
         {
-            for( int i = 0; i < LIFES; i++)
+            for (int i = 0; i < LIFES; i++)
             {
                 sB.Draw(gameTexture, new Rectangle(8 * (int)SCALE * i, 0, 16 * (int)SCALE, 16 * (int)SCALE), new Rectangle(0, 32, 16, 16), Color.White);
             }

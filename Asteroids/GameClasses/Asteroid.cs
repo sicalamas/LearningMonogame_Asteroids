@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 
-namespace Asteroids 
+namespace Asteroids
 {
     enum AsteroidTypes
     {
@@ -15,7 +15,7 @@ namespace Asteroids
     {
         // Atributos
         AsteroidTypes type;
-        float radius;
+        //float radius; // TODO: implementar raio como determinante para área colisão
         int spriteSize;
         Rectangle spriteRectangle;
 
@@ -30,19 +30,22 @@ namespace Asteroids
 
         private void setAsteroid()
         {
-            switch(type)
+            switch (type)
             {
                 case AsteroidTypes.Big:
                     spriteSize = 32;
                     spriteRectangle = new Rectangle(32, 0, spriteSize, spriteSize);
+                    // TODO: Configurar tamanho do colisor
                     break;
                 case AsteroidTypes.Medium:
                     spriteSize = 16;
                     spriteRectangle = new Rectangle(48, 48, spriteSize, spriteSize);
+                    // TODO: Configurar tamanho do colisor
                     break;
                 case AsteroidTypes.Small:
                     spriteSize = 8;
                     spriteRectangle = new Rectangle(32, 48, spriteSize, spriteSize);
+                    // TODO: Configurar tamanho do colisor
                     break;
             }
         }
@@ -65,7 +68,7 @@ namespace Asteroids
         private void setVelocity()
         {
             Random rand = new Random(this.GetHashCode());
-            velocity.X = (float) rand.Next(-10,10) / 10;
+            velocity.X = (float)rand.Next(-10, 10) / 10;
             velocity.Y = (float)rand.Next(-10, 10) / 10;
         }
 
@@ -83,22 +86,22 @@ namespace Asteroids
 
         public override void update(GameTime gT)
         {
-            angle += 0.1f * (float)gT.ElapsedGameTime.TotalSeconds;
+            angle += 0.03f;
             updatePosition();
             base.update(gT);
         }
 
         public override void draw(SpriteBatch sB)
         {
-                sB.Draw(GameData.gameTexture,
-            position,
-            spriteRectangle,
-            Color.White,
-            angle + MathHelper.ToRadians(90),
-            new Vector2(spriteSize / 2, spriteSize / 2),
-            scale,
-            SpriteEffects.None,
-            0);
+            sB.Draw(GameData.gameTexture,
+        position,
+        spriteRectangle,
+        Color.White,
+        angle + MathHelper.ToRadians(90),
+        new Vector2(spriteSize / 2, spriteSize / 2),
+        scale,
+        SpriteEffects.None,
+        0);
             base.draw(sB);
         }
     }
