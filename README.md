@@ -3,7 +3,7 @@
 </br>
 <h2>Table of Contents</h1>
 <ul>
-	<li><a href="depID">Dependencies</a></li>
+	<li><a href="#depID">Dependencies</a></li>
 	<li> </li>
 	<li> </li>
 	<li> </li>
