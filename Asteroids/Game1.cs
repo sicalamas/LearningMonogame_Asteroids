@@ -96,7 +96,7 @@ namespace Asteroids
             spriteBatch.Begin(SpriteSortMode.Deferred, null, SamplerState.PointClamp, null, null, null, null);
             gameObjects.draw(spriteBatch); // Chamadas aos desenhos de todos os objetos do listão
             spriteBatch.DrawRectangle(new RectangleF(0, 0, GameData.WIDTH, GameData.HEIGHT), Color.White, 2.0f); // Desenho do retângulo branco (bordas da tela)
-            gameData.drawLifes(spriteBatch); // Chamada ao desenho dos corações (contadores de vida)
+            gameData.drawData(spriteBatch); // Chamada ao desenho dos corações (contadores de vida)
             spriteBatch.End();
 
             base.Draw(gameTime);
