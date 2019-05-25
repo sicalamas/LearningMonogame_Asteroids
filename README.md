@@ -5,9 +5,10 @@
 <ul>
 	<li><a href="#depID">Dependencies</a></li>
 	<li> </li>
-	<li> </li>
-	<li> </li>
-	<li> </li>
 </ul>
 </br>
 <h2 id="depID">Dependencies</h2>
+<ul>
+	<li><a href="https://github.com/craftworkgames/MonoGame.Extended">Monogame Extended</a></li>
+	<li> </li>
+</ul>
