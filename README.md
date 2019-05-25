@@ -9,7 +9,16 @@
 </br>
 <h2 id="depID">Dependencies</h2>
 <ul>
-	<li><a href="http://www.monogame.net/">Monogame</a></li>
-	<li><a href="https://github.com/craftworkgames/MonoGame.Extended">Monogame.Extended</a></li>
-	<li> <a href="https://github.com/tainicom/Aether.Physics2D">Aether.Physics2D</a></li>
+	<li>
+		<p><a href="http://www.monogame.net/">Monogame</a></p>
+		<p><a href="http://www.monogame.net/documentation/?page=Setting_Up_MonoGame">- Setting Up Monogame</a></p>
+	</li>
+	<li>
+		<p><a href="https://github.com/craftworkgames/MonoGame.Extended">Monogame.Extended</a></p>
+		<p><a href="http://docs.monogameextended.net/Installation/">- Setting Up Monogame.Extended</a></p>
+	</li>
+	<li>
+		<p><a href="https://github.com/tainicom/Aether.Physics2D">Aether.Physics2D</a>
+		<p>- Setup through NuGet </p>
+	</li>
 </ul>
